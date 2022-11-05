@@ -1,0 +1,40 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+}
+
+group = 'org.chun'
+version = '0.0.1-SNAPSHOT'
+targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_17
+compileJava.options.encoding =
+compileTestJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // spring
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    // postgres
+    runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '42.2.26'
+
+    // lombok
+    var lombokVersion = '1.18.20'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    testImplementation group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+
+    // test
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
