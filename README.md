@@ -1,2 +1,7 @@
-# hibernate-search-way-template
-用各種方式使用 Hibernate, 就是不想看到寫死的字串在 Java code !!
+# README
+## Hibernate-Search-Way-Template
+
+1. Repository
+2. EntityManager (static String)
+3. EntityManager (.sql)
+4. EntityManager (.json)
