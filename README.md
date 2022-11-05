@@ -1,4 +1,6 @@
 # README
+使用 `Hibernate/Spring-Data-Jpa` 以不同的方式去引入 SQL 
+
 ## Hibernate-Search-Way-Template
 
 1. Repository
